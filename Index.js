@@ -5,8 +5,9 @@ class Calculadora {
         console.clear();
     }
 
+
     limpiarAll(){
-        this.operadorActual =' ';
+        this.operadorActual ='';
         this.operadorAnterior ='';
         this.operacion = undefined;
     }
@@ -15,9 +16,12 @@ class Calculadora {
     }
 
     elegirNumeros(numero){
-        this.operadorActual = '';
-        this.operadorActual = this.operadorActual.toString() + numero.toString();
-    }
+        if(numero === '.' && this.operadorActual.includes('.')) return
+        if(this.operadorActual === undefined){
+            this.operadorActual = ' ';
+        }
+            this.operadorActual = this.operadorActual.toString() + numero.toString(); 
+        }
 
     igual(){
 
